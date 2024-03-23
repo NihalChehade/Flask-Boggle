@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %} {% endblock %}
+
+{% block main %} 
+<div id="score-div"></div>
+<div id="secLeft">You have 60 seconds left!!</div>
+ <table class="grid-container">
+    {% for row in board %}
+    <tr>{% for column in row %}
+        <td class="grid-item">{{column}}</td>
+        {% endfor %}
+    </tr>
+    {% endfor %}
+</table> <br>
+<form id="guess-form">
+    <input type="text" id="guessed" name="suggestion"  placeholder="Enter Your Suggestion!"/>
+    <button id="submit">Submit</button>
+</form>
+<p id="msg"></p>
+{% endblock %}
